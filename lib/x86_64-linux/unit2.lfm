@@ -1,0 +1,23 @@
+object Form2: TForm2
+  Left = 676
+  Height = 173
+  Top = 282
+  Width = 314
+  BorderStyle = bsSingle
+  Caption = 'About:'
+  ClientHeight = 173
+  ClientWidth = 314
+  Position = poScreenCenter
+  LCLVersion = '1.2.4.0'
+  object Label1: TLabel
+    Left = 0
+    Height = 175
+    Top = 0
+    Width = 312
+    Caption = 'Программа для построения'#10'графиков двух колебаний'#10'и их суммы.'#10'ФИТР БНТУ'#10'Author: Andrew Ivanov'#10'Версия: 0.5'#10'11.  12.  2014'
+    Font.Height = -21
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+  end
+end

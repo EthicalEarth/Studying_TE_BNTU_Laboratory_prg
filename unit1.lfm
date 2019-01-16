@@ -1,0 +1,360 @@
+object Form1: TForm1
+  Left = 354
+  Height = 788
+  Top = 151
+  Width = 1223
+  BorderStyle = bsSingle
+  Caption = 'РГР ТОЭ - Построение графиков - ФИТР БНТУ'
+  ClientHeight = 788
+  ClientWidth = 1223
+  Position = poScreenCenter
+  LCLVersion = '1.2.4.0'
+  Visible = True
+  object Chart1: TChart
+    Left = 4
+    Height = 620
+    Top = 0
+    Width = 1219
+    AxisList = <    
+      item
+        Minors = <>
+        Range.UseMax = True
+        Range.UseMin = True
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = 'U, Вольт'
+      end    
+      item
+        Intervals.MaxLength = 200
+        Alignment = calBottom
+        Minors = <>
+        Range.UseMax = True
+        Range.UseMin = True
+        Title.Visible = True
+        Title.Caption = 't, c'
+        Title.PositionOnMarks = True
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Legend.Alignment = laBottomCenter
+    Legend.Font.Height = -13
+    Legend.Font.Name = 'Sans'
+    Legend.GridHorizontal.Visible = True
+    Legend.Visible = True
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object Chart1LineSeries1: TLineSeries
+      Title = 'U_1(t)=U_1*sqrt(2)*sin(wt+phi1)'
+      LinePen.Color = 16740096
+      LinePen.Width = 2
+    end
+    object Chart1LineSeries2: TLineSeries
+      Title = 'U_2(t)=U_2*sqrt(2)*sin(wt+phi2)'
+      LinePen.Color = clRed
+      LinePen.Width = 2
+    end
+    object Chart1LineSeries3: TLineSeries
+      Title = 'U(t)=U_1(t)+U_2(t)'
+      LinePen.Color = 7798900
+      LinePen.Width = 2
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 160
+    Top = 624
+    Width = 305
+    Caption = 'Первая гармоника'
+    ClientHeight = 134
+    ClientWidth = 301
+    TabOrder = 1
+    object Edit1: TEdit
+      Left = 115
+      Height = 34
+      Top = 0
+      Width = 80
+      Constraints.OnChange = Edit1EditingDone
+      OnEditingDone = Edit1EditingDone
+      TabOrder = 0
+      Text = '0'
+    end
+    object Edit4: TEdit
+      Left = 115
+      Height = 34
+      Top = 40
+      Width = 80
+      Constraints.OnChange = Edit4EditingDone
+      OnEditingDone = Edit4EditingDone
+      TabOrder = 1
+      Text = '50'
+    end
+    object help_3: TLabel
+      Left = 75
+      Height = 24
+      Top = 45
+      Width = 29
+      Caption = 'f1='
+      ParentColor = False
+    end
+    object help_4: TLabel
+      Left = 200
+      Height = 24
+      Top = 45
+      Width = 17
+      Caption = 'Гц'
+      ParentColor = False
+    end
+    object help_1: TLabel
+      Left = 5
+      Height = 24
+      Top = 5
+      Width = 101
+      Caption = 'Модуль U1='
+      ParentColor = False
+    end
+    object help_2: TLabel
+      Left = 200
+      Height = 24
+      Top = 5
+      Width = 46
+      Caption = 'Вольт'
+      ParentColor = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 430
+    Height = 160
+    Top = 624
+    Width = 305
+    Caption = 'Необходимая гармоника'
+    ClientHeight = 134
+    ClientWidth = 301
+    TabOrder = 2
+    object Edit2: TEdit
+      Left = 115
+      Height = 34
+      Top = 40
+      Width = 80
+      Constraints.OnChange = Edit2EditingDone
+      OnEditingDone = Edit2EditingDone
+      TabOrder = 0
+      Text = '150'
+    end
+    object help_7: TLabel
+      Left = 75
+      Height = 24
+      Top = 45
+      Width = 29
+      Caption = 'f2='
+      ParentColor = False
+    end
+    object Edit5: TEdit
+      Left = 115
+      Height = 34
+      Top = 0
+      Width = 80
+      Constraints.OnChange = Edit5EditingDone
+      OnEditingDone = Edit5EditingDone
+      TabOrder = 1
+      Text = '0'
+    end
+    object help_8: TLabel
+      Left = 200
+      Height = 24
+      Top = 45
+      Width = 17
+      Caption = 'Гц'
+      ParentColor = False
+    end
+    object help_5: TLabel
+      Left = 5
+      Height = 24
+      Top = 5
+      Width = 101
+      Caption = 'Модуль U2='
+      ParentColor = False
+    end
+    object help_6: TLabel
+      Left = 200
+      Height = 24
+      Top = 5
+      Width = 46
+      Caption = 'Вольт'
+      ParentColor = False
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 835
+    Height = 160
+    Top = 624
+    Width = 385
+    Caption = 'Построение'
+    ClientHeight = 134
+    ClientWidth = 381
+    TabOrder = 3
+    object Button1: TButton
+      Left = 240
+      Height = 30
+      Top = 88
+      Width = 97
+      Caption = 'Построить'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object help_11: TLabel
+      Left = 136
+      Height = 29
+      Top = 0
+      Width = 33
+      Caption = 'sin('
+      Font.Height = -21
+      ParentColor = False
+      ParentFont = False
+    end
+    object help_13: TLabel
+      Left = 275
+      Height = 24
+      Top = 3
+      Width = 12
+      Caption = '+'
+      ParentColor = False
+    end
+    object Edit3: TEdit
+      Left = 290
+      Height = 34
+      Top = 0
+      Width = 68
+      TabOrder = 1
+      Text = '0'
+    end
+    object help_15: TLabel
+      Left = 360
+      Height = 29
+      Top = 3
+      Width = 8
+      Caption = ')'
+      Font.Height = -21
+      ParentColor = False
+      ParentFont = False
+    end
+    object W_1: TLabel
+      Left = 180
+      Height = 21
+      Top = 6
+      Width = 27
+      Caption = 'w1'
+      Font.Height = -18
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object help_12: TLabel
+      Left = 136
+      Height = 29
+      Top = 45
+      Width = 33
+      Caption = 'sin('
+      Font.Height = -21
+      ParentColor = False
+      ParentFont = False
+    end
+    object help_14: TLabel
+      Left = 275
+      Height = 24
+      Top = 48
+      Width = 12
+      Caption = '+'
+      ParentColor = False
+    end
+    object Edit6: TEdit
+      Left = 290
+      Height = 34
+      Top = 43
+      Width = 68
+      TabOrder = 2
+      Text = '0'
+    end
+    object help_16: TLabel
+      Left = 360
+      Height = 29
+      Top = 45
+      Width = 8
+      Caption = ')'
+      Font.Height = -21
+      ParentColor = False
+      ParentFont = False
+    end
+    object W_2: TLabel
+      Left = 180
+      Height = 21
+      Top = 50
+      Width = 27
+      Caption = 'w2'
+      Font.Height = -18
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object U_1_znach: TLabel
+      Left = 68
+      Height = 24
+      Top = 3
+      Width = 33
+      Caption = 'U1*'
+      ParentColor = False
+    end
+    object U_2_znach: TLabel
+      Left = 70
+      Height = 24
+      Top = 50
+      Width = 33
+      Caption = 'U2*'
+      ParentColor = False
+    end
+    object Button2: TButton
+      Left = 91
+      Height = 30
+      Top = 88
+      Width = 97
+      Caption = 'Об Авторе'
+      OnClick = Button2Click
+      TabOrder = 3
+    end
+    object help_9: TLabel
+      Left = 0
+      Height = 24
+      Top = 3
+      Width = 54
+      Caption = 'U1(t)='
+      ParentColor = False
+    end
+    object help_10: TLabel
+      Left = 0
+      Height = 24
+      Top = 50
+      Width = 54
+      Caption = 'U2(t)='
+      ParentColor = False
+    end
+    object help_20: TLabel
+      Left = 255
+      Height = 24
+      Top = 3
+      Width = 17
+      Caption = '*t'
+      ParentColor = False
+    end
+    object help_21: TLabel
+      Left = 255
+      Height = 24
+      Top = 48
+      Width = 17
+      Caption = '*t'
+      ParentColor = False
+    end
+  end
+end
